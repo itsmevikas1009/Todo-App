@@ -12,7 +12,7 @@ const PORT = 3000;
 const app = express();
 
 const corsOption = {
-    origin: 'https://todo-app-murex-rho.vercel.app/',
+    origin: '*',
     methods: ['POST', 'GET'],
     credentials: true,
     optionSuccessStatus: 200
