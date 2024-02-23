@@ -1,13 +1,13 @@
 import axios from "axios";
 
 // const oldURL = "http://localhost:3000/api/login";
-const loginURL = "https://todo-app-murex-rho.vercel.app/api/login";
-const signUpURL = "https://todo-app-murex-rho.vercel.app/api/signup";
-const logoutURL = "https://todo-app-murex-rho.vercel.app/api/logout";
-const addTodoURL = "https://todo-app-murex-rho.vercel.app/api/createTodo";
-const getTodoURL = "https://todo-app-murex-rho.vercel.app/api/todoList";
-const markTodoURL = "https://todo-app-murex-rho.vercel.app/api/markTodo";
-const removeTodoURL = "https://todo-app-murex-rho.vercel.app/api/removeTodo";
+const loginURL = "https://todo-app-server-gilt.vercel.app/api/login";
+const signUpURL = "https://todo-app-server-gilt.vercel.app/api/signup";
+const logoutURL = "https://todo-app-server-gilt.vercel.app/api/logout";
+const addTodoURL = "https://todo-app-server-gilt.vercel.app/api/createTodo";
+const getTodoURL = "https://todo-app-server-gilt.vercel.app/api/todoList";
+const markTodoURL = "https://todo-app-server-gilt.vercel.app/api/markTodo";
+const removeTodoURL = "https://todo-app-server-gilt.vercel.app/api/removeTodo";
 
 const LoginApi = async (data) => {
   return await axios.post(loginURL, data, {
