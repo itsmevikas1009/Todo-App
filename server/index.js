@@ -3,8 +3,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import apiRoute, { apiProtected } from './routes/api.js';
-import AuthMiddleware from './middlewares/AuthMiddleware.js';
+import apiRoute, { apiProtected } from './src/routes/api.js';
+import AuthMiddleware from './src/middlewares/AuthMiddleware.js';
 
 
 const connectDB = mongoose.connect('mongodb+srv://yiyido7251:xUyPHi6CxNqC9TXr@cluster0.ln52oae.mongodb.net/todo_app', { useNewUrlParser: true });
