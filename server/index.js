@@ -12,10 +12,10 @@ const PORT = 3000;
 const app = express();
 
 const corsOption = {
-    origin: '*',
-    methods: ['POST', 'GET'],
-    credentials: true,
-    optionSuccessStatus: 200
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
 }
 app.use(cors(corsOption));
 app.use(express.json());
