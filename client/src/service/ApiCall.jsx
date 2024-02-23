@@ -1,24 +1,33 @@
 import axios from "axios";
 
+// const oldURL = "http://localhost:3000/api/login";
+const loginURL = "https://todo-app-murex-rho.vercel.app/api/login";
+const signUpURL = "https://todo-app-murex-rho.vercel.app/api/signup";
+const logoutURL = "https://todo-app-murex-rho.vercel.app/api/logout";
+const addTodoURL = "https://todo-app-murex-rho.vercel.app/api/createTodo";
+const getTodoURL = "https://todo-app-murex-rho.vercel.app/api/todoList";
+const markTodoURL = "https://todo-app-murex-rho.vercel.app/api/markTodo";
+const removeTodoURL = "https://todo-app-murex-rho.vercel.app/api/removeTodo";
+
 const LoginApi = async (data) => {
-  return await axios.post("http://localhost:3000/api/login", data, {
+  return await axios.post(loginURL, data, {
     withCredentials: true,
   });
 };
 
 const SignUpApi = async (data) => {
-  return await axios.post("http://localhost:3000/api/signup", data, {
+  return await axios.post(signUpURL, data, {
     withCredentials: true,
   });
 };
 
 const LogoutApi = async () => {
-  return await axios.get("http://localhost:3000/api/logout");
+  return await axios.get(logoutURL);
 };
 
 const AddTodoApi = async (data) => {
   let token = getToken();
-  return await axios.post("http://localhost:3000/api/createTodo", data, {
+  return await axios.post(addTodoURL, data, {
     headers: {
       auth: token,
     },
@@ -27,7 +36,7 @@ const AddTodoApi = async (data) => {
 
 const GetTodoListApi = async () => {
   let token = getToken();
-  return await axios.get("http://localhost:3000/api/todoList", {
+  return await axios.get(getTodoURL, {
     headers: {
       auth: token,
     },
@@ -36,7 +45,7 @@ const GetTodoListApi = async () => {
 
 const MarkTodoApi = async (data) => {
   let token = getToken();
-  return await axios.post("http://localhost:3000/api/markTodo", data, {
+  return await axios.post(markTodoURL, data, {
     headers: {
       auth: token,
     },
@@ -45,7 +54,7 @@ const MarkTodoApi = async (data) => {
 
 const RemoveTodoApi = async (data) => {
   let token = getToken();
-  return await axios.post("http://localhost:3000/api/removeTodo", data, {
+  return await axios.post(removeTodoURL, data, {
     headers: {
       auth: token,
     },
