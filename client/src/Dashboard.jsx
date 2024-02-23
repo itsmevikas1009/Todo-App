@@ -73,8 +73,8 @@ function Dashboard({ user, setUser }) {
                   <button
                     className={
                       task
-                        ? "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer dark:border  dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900"
-                        : "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
+                        ? "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer dark:border  dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900"
+                        : "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
                     }
                     onClick={allTask}
                   >
@@ -85,8 +85,8 @@ function Dashboard({ user, setUser }) {
                   <button
                     className={
                       pending
-                        ? "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer dark:border dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900"
-                        : "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
+                        ? "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer dark:border dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900"
+                        : "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
                     }
                     onClick={pendingTask}
                   >
@@ -97,8 +97,8 @@ function Dashboard({ user, setUser }) {
                   <button
                     className={
                       completed
-                        ? "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer dark:border  dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900 "
-                        : "mx-1 px-4 p-1 w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
+                        ? "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer dark:border  dark:border-gray-300 dark:bg-gray-700 dark:text-gray-300 text-white bg-gray-900 "
+                        : "mx-1 px-4 p-1 sm:w-32 rounded-xl cursor-pointer bg-gray-400 text-gray-900 "
                     }
                     onClick={completedTask}
                   >
