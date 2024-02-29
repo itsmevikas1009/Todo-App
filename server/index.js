@@ -11,8 +11,13 @@ const connectDB = mongoose.connect('mongodb+srv://yiyido7251:xUyPHi6CxNqC9TXr@cl
 const PORT = 3000;
 const app = express();
 
+const localURL = "http://localhost:5173"
+const vercelURL = "https://todo-app-murex-rho.vercel.app"
+
+const URL = vercelURL;  // Change to localURL if you are running the server locally
+
 const corsOption = {
-    origin: 'https://todo-app-murex-rho.vercel.app',
+    origin: URL,
     methods: ['POST', 'GET'],
     credentials: true,
     optionSuccessStatus: 200

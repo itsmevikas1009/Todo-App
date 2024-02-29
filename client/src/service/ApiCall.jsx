@@ -1,13 +1,17 @@
 import axios from "axios";
 
-// const oldURL = "http://localhost:3000/api/login";
-const loginURL = "https://todo-app-server-gilt.vercel.app/api/login";
-const signUpURL = "https://todo-app-server-gilt.vercel.app/api/signup";
-const logoutURL = "https://todo-app-server-gilt.vercel.app/api/logout";
-const addTodoURL = "https://todo-app-server-gilt.vercel.app/api/createTodo";
-const getTodoURL = "https://todo-app-server-gilt.vercel.app/api/todoList";
-const markTodoURL = "https://todo-app-server-gilt.vercel.app/api/markTodo";
-const removeTodoURL = "https://todo-app-server-gilt.vercel.app/api/removeTodo";
+const localURL = "http://localhost:3000/";
+const vercelURL = "https://todo-app-server-gilt.vercel.app/";
+
+const URL = vercelURL; // Change to localURL if testing locally
+
+const loginURL = `${URL}api/login`;
+const signUpURL = `${URL}api/signup`;
+const logoutURL = `${URL}api/logout`;
+const addTodoURL = `${URL}api/createTodo`;
+const getTodoURL = `${URL}api/todoList`;
+const markTodoURL = `${URL}api/markTodo`;
+const removeTodoURL = `${URL}api/removeTodo`;
 
 const LoginApi = async (data) => {
   return await axios.post(loginURL, data, {
