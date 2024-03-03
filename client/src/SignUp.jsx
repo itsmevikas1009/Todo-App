@@ -4,6 +4,7 @@ import Animation from "./components/Animation.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { SignUpApi } from "./service/ApiCall.jsx";
+import toast, { Toaster } from "react-hot-toast";
 
 function SignUp({ user, setUser }) {
   const [firstName, setFirstName] = useState("");
@@ -32,11 +33,11 @@ function SignUp({ user, setUser }) {
     e.preventDefault();
     SignUpApi(data)
       .then((res) => {
-        if (res.status === 200) {
-          alert(res.data.message);
+        if (res.data.status === 200) {
+          toast.success(res.data.message);
           navigate("/login");
         } else {
-          alert(res.data.message);
+          toast.error(res.data.message);
         }
       })
       .catch((err) => console.log(err.res));
@@ -45,6 +46,7 @@ function SignUp({ user, setUser }) {
   return (
     <div className="pt-16">
       <NavBar />
+      <Toaster />
       <section>
         <div className="flex md:flex-row flex-col items-center justify-center md:px-6 md:py-8 mx-8 md:mx-20">
           <Animation />

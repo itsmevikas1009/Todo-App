@@ -22,7 +22,7 @@ const Login = async (req, res) => {
     const token = jwt.sign({ userId }, "jwt-secret-key");
     // res.cookie('token', token);
     return res.json({
-        staus: 200,
+        status: 200,
         userId: user._id,
         token: token,
         firstName: user.firstName,

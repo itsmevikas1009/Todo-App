@@ -6,6 +6,7 @@ import {
   IoIosCheckmarkCircleOutline,
 } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
+import toast, { Toaster } from "react-hot-toast";
 
 function TodoTask({ todo }) {
   const handleMarkTodo = async () => {
@@ -13,7 +14,7 @@ function TodoTask({ todo }) {
       todo_id: todo._id,
     });
     if (res.data.status === 200) {
-      alert(res.data.message);
+      TransformStream.success(res.data.message);
       window.location.reload();
     }
   };
@@ -23,7 +24,7 @@ function TodoTask({ todo }) {
       todo_id: todo._id,
     });
     if (res.data.status === 200) {
-      alert(res.data.message);
+      toast.success(res.data.message);
       window.location.reload();
     }
   };

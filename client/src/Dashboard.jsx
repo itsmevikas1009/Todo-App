@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Animation from "./components/Animation.jsx";
 import { GetTodoListApi } from "./service/ApiCall.jsx";
 import TodoTask from "./components/TodoTask.jsx";
+import toast, { Toaster } from "react-hot-toast";
 
 function Dashboard({ user, setUser }) {
   const [list, setList] = useState([]);
@@ -51,6 +52,7 @@ function Dashboard({ user, setUser }) {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
+      <Toaster />
       <div className="pt-16">
         {user ? (
           <div className="lg:flex lg:justify-center lg:items-center text-center">

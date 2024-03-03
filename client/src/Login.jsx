@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar.jsx";
 import Animation from "./components/Animation.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginApi } from "./service/ApiCall.jsx";
+import toast, { Toaster } from "react-hot-toast";
 
 function Login({ user, setUser }) {
   const [email, setEmail] = useState("");
@@ -24,13 +25,14 @@ function Login({ user, setUser }) {
     e.preventDefault();
     LoginApi(data)
       .then((res) => {
-        if (res.status === 200) {
+        if (res.data.status === 200) {
           localStorage.setItem("user", JSON.stringify(res.data));
+          toast.success(res.data.message);
           window.location.reload();
           navigate("/");
           return;
         } else {
-          alert(res.data.message);
+          toast.error(res.data.message);
         }
       })
       .catch((err) => console.log(err.res));
@@ -39,6 +41,7 @@ function Login({ user, setUser }) {
   return (
     <div className="pt-16">
       <NavBar />
+      <Toaster />
       <section>
         <div className="flex md:flex-row flex-col items-center justify-center md:px-6 md:py-8 mx-8 md:mx-20">
           <Animation />

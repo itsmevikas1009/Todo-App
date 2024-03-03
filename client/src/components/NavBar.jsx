@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { LogoutApi } from "../service/ApiCall.jsx";
+import toast, { Toaster } from "react-hot-toast";
 
 function NavBar({ user, setUser }) {
   // State to manage the navbar's visibility
@@ -16,7 +17,7 @@ function NavBar({ user, setUser }) {
     try {
       const res = await LogoutApi();
       localStorage.clear();
-      alert(res.data.message);
+      toast.success(res.data.message);
       window.location.reload(true);
     } catch (err) {
       console.log(err);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AddTodoApi } from "../service/ApiCall.jsx";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function AddTodoModel() {
   const [todoTitle, setTodoTitle] = useState("");
@@ -12,13 +13,13 @@ function AddTodoModel() {
   const handleTodo = async (e) => {
     e.preventDefault();
     if (todoTitle === "") {
-      alert("Please enter a task!");
+      toast.error("Please enter a task!");
       return;
     }
     try {
       const res = await AddTodoApi(data);
       if (res.status === 200) {
-        alert(res.data.message);
+        toast.success(res.data.message);
         window.location.reload();
         setTodoTitle("");
       }
