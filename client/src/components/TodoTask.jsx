@@ -14,7 +14,7 @@ function TodoTask({ todo }) {
       todo_id: todo._id,
     });
     if (res.data.status === 200) {
-      TransformStream.success(res.data.message);
+      toast.success(res.data.message);
       window.location.reload();
     }
   };
