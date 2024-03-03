@@ -7,13 +7,13 @@ function Animation() {
       className="w-full text-[#bfe1d4] dark:text-[#00df9a] text-3xl md:text-7xl font-bold lg:space-x-4 space-x-3 lg:px-20 py-8 text-center"
     >
       <span>T</span>
-      <span>O</span>
+      <span>o</span>
       <span>D</span>
-      <span>O</span>
+      <span>o</span>
       <span>&nbsp;</span>
       <span>A</span>
-      <span>P</span>
-      <span>P</span>
+      <span>p</span>
+      <span>p</span>
     </h1>
   );
 }

@@ -29,7 +29,7 @@ function NavBar({ user, setUser }) {
       {/* Logo */}
       <Link to="/">
         <h1 className="w-full text-3xl sm:text-3xl font-bold text-[#bfe1d4] dark:text-[#00df9a] ml-8">
-          Todo App 🖋️
+          ToDo App 🖋️
         </h1>
       </Link>
       {/* Desktop Navigation */}

@@ -18,7 +18,7 @@ function Login({ user, setUser }) {
     if (user) {
       navigate("/");
     }
-    document.title = "Todo App - Login";
+    document.title = "ToDo App - Login";
   }, []);
 
   const handleLogin = (e) => {

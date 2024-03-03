@@ -18,7 +18,7 @@ function Dashboard({ user, setUser }) {
     if (user) {
       fetchTodoList();
     }
-    document.title = "Todo App - Home";
+    document.title = "ToDo App - Home";
   }, []);
 
   async function fetchTodoList() {
@@ -139,13 +139,13 @@ function Dashboard({ user, setUser }) {
               className="inline-block text-[#bfe1d4] dark:text-[#00df9a]"
             >
               <span>T</span>
-              <span>O</span>
+              <span>o</span>
               <span>D</span>
-              <span>O</span>
+              <span>o</span>
               <span>&nbsp;</span>
               <span>A</span>
-              <span>P</span>
-              <span>P</span>
+              <span>p</span>
+              <span>p</span>
             </h1>
             , <br />
             <br />
