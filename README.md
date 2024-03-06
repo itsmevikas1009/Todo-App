@@ -29,9 +29,9 @@ Check out the live demo: [Personalized To-Do List](https://todo-app-murex-rho.ve
 
 ## Screenshots
 
-![Screenshot 1](/images/screenshot1.png)
-![Screenshot 2](/images/screenshot2.png)
+![Screenshot 1](/images/Screenshot1.png)
+![Screenshot 2](/images/Screenshot2.png)
 
 ## Author
 
-[Vikas Chaurasia](https://github.com/itsmevikas1009/)
+[Vikas Chaurasia](https://github.com/itsmevikas1009/) ©️ 2024
