@@ -14,7 +14,7 @@ function App() {
     {
       path: "/",
       element: <Dashboard user={user} useState={setUser} />,
-      erroElement: <Error />,
+      errorElement: <Error />,
     },
     {
       path: "/signup",
