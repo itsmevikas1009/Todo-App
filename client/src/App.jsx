@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import { useState } from "react";
+import Error from "./components/Error.jsx";
 
 function App() {
   const info = localStorage.getItem("user");
@@ -13,6 +14,7 @@ function App() {
     {
       path: "/",
       element: <Dashboard user={user} useState={setUser} />,
+      erroElement: <Error />,
     },
     {
       path: "/signup",
