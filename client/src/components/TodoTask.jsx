@@ -6,7 +6,7 @@ import {
   IoIosCheckmarkCircleOutline,
 } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 function TodoTask({ todo }) {
   const handleMarkTodo = async () => {

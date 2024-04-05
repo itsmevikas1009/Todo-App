@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AddTodoApi } from "../service/ApiCall.jsx";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 function AddTodoModel() {
   const [todoTitle, setTodoTitle] = useState("");

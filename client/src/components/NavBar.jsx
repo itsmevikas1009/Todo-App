@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { LogoutApi } from "../service/ApiCall.jsx";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 function NavBar({ user, setUser }) {
   // State to manage the navbar's visibility

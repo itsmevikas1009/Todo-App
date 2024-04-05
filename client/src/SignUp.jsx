@@ -46,7 +46,6 @@ function SignUp({ user, setUser }) {
   return (
     <div className="pt-16">
       <NavBar />
-      <Toaster />
       <section>
         <div className="flex md:flex-row flex-col items-center justify-center md:px-6 md:py-8 mx-8 md:mx-20">
           <Animation />

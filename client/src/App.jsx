@@ -5,6 +5,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import { useState } from "react";
 import Error from "./components/Error.jsx";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const info = localStorage.getItem("user");
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Toaster />
     </>
   );
 }
