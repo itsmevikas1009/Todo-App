@@ -7,24 +7,25 @@ import apiRoute, { apiProtected } from './src/routes/api.js';
 import AuthMiddleware from './src/middlewares/AuthMiddleware.js';
 import 'dotenv/config';
 
-const connectDB = mongoose.connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true });
+const connectDB = mongoose.connect(`${process.env.MONGODB_URI}`);
 const PORT = 3000;
 const app = express();
 
-const localURL = "http://localhost:5173"
-const vercelURL = "https://todo-app-murex-rho.vercel.app"
+const localURL = 'http://localhost:5173';
+const vercelURL = 'https://todo-app-murex-rho.vercel.app'
 
 const URL = vercelURL;  // Change to localURL if you are running the server locally
 
 const corsOption = {
     origin: URL,
-    methods: ['POST', 'GET'],
+    // methods: ['POST', 'GET'],
     credentials: true,
-    optionSuccessStatus: 200
+    // optionSuccessStatus: 200
 }
+
 app.use(cors(corsOption));
 app.use(express.json());
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 
 app.use("/api/", apiRoute);

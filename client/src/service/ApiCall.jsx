@@ -2,6 +2,7 @@ import axios from "axios";
 
 // eslint-disable-next-line no-unused-vars
 const localURL = "http://localhost:3000/";
+// eslint-disable-next-line no-unused-vars
 const vercelURL = "https://todo-app-server-gilt.vercel.app/";
 
 const URL = vercelURL; // Change to localURL if testing locally
@@ -66,6 +67,7 @@ const RemoveTodoApi = async (data) => {
   });
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function getToken() {
   let user = localStorage.getItem("user");
   if (!user) return;

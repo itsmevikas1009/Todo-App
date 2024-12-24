@@ -19,7 +19,7 @@ const SignUp = async (req, res) => {
         email: email.toLowerCase(),
         password
     })
-    return res.json({ status: 200, message: "Registerd Successfully!" });
+    return res.json({ status: 200, message: "Registered Successfully!" });
 }
 
 export default SignUp;
