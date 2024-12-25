@@ -1,11 +1,8 @@
 import axios from "axios";
 
-// eslint-disable-next-line no-unused-vars
 const localURL = "http://localhost:3000/";
-// eslint-disable-next-line no-unused-vars
 const vercelURL = "https://todo-app-server-gilt.vercel.app/";
-
-const URL = vercelURL; // Change to localURL if testing locally
+const URL = localURL; // Change to localURL if testing locally
 
 const loginURL = `${URL}api/login`;
 const signUpURL = `${URL}api/signup`;
@@ -15,34 +12,36 @@ const getTodoURL = `${URL}api/todoList`;
 const markTodoURL = `${URL}api/markTodo`;
 const removeTodoURL = `${URL}api/removeTodo`;
 
+const api = axios.create({
+  withCredentials: true, // Ensures cookies are sent with the requests
+});
+
+// API Calls
+
 const LoginApi = async (data) => {
-  return await axios.post(loginURL, data, {
-    withCredentials: true,
-  });
+  return await api.post(loginURL, data);
 };
 
 const SignUpApi = async (data) => {
-  return await axios.post(signUpURL, data, {
-    withCredentials: true,
-  });
+  return await api.post(signUpURL, data);
 };
 
 const LogoutApi = async () => {
-  return await axios.get(logoutURL);
+  return await api.get(logoutURL);
 };
 
 const AddTodoApi = async (data) => {
-  let token = getToken();
-  return await axios.post(addTodoURL, data, {
+  const token = getToken(); // Get token from localStorage or cookies
+  return await api.post(addTodoURL, data, {
     headers: {
-      auth: token,
+      auth: token, // Attach token to headers
     },
   });
 };
 
 const GetTodoListApi = async () => {
-  let token = getToken();
-  return await axios.get(getTodoURL, {
+  const token = getToken();
+  return await api.get(getTodoURL, {
     headers: {
       auth: token,
     },
@@ -50,8 +49,8 @@ const GetTodoListApi = async () => {
 };
 
 const MarkTodoApi = async (data) => {
-  let token = getToken();
-  return await axios.post(markTodoURL, data, {
+  const token = getToken();
+  return await api.post(markTodoURL, data, {
     headers: {
       auth: token,
     },
@@ -59,20 +58,20 @@ const MarkTodoApi = async (data) => {
 };
 
 const RemoveTodoApi = async (data) => {
-  let token = getToken();
-  return await axios.post(removeTodoURL, data, {
+  const token = getToken();
+  return await api.post(removeTodoURL, data, {
     headers: {
       auth: token,
     },
   });
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
+// Token function (check localStorage or cookies for token)
 export function getToken() {
-  let user = localStorage.getItem("user");
-  if (!user) return;
+  const user = localStorage.getItem("user");
+  if (!user) return null;
   const userObj = JSON.parse(user);
-  return userObj.token;
+  return userObj.token; // Token from localStorage
 }
 
 export {

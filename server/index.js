@@ -1,37 +1,42 @@
+import 'dotenv/config';
 import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
 import apiRoute, { apiProtected } from './src/routes/api.js';
 import AuthMiddleware from './src/middlewares/AuthMiddleware.js';
-import 'dotenv/config';
+import connectDB from './src/db/index.js';
 
-const connectDB = mongoose.connect(`${process.env.MONGODB_URI}`);
-const PORT = 3000;
 const app = express();
+const PORT = 3000;
 
-const localURL = 'http://localhost:5173';
+// Client URL - make sure this is accurate
 const vercelURL = 'https://todo-app-murex-rho.vercel.app'
-
-const URL = vercelURL;  // Change to localURL if you are running the server locally
+const localURL = 'http://localhost:5173';  // Client running on port 5173
 
 const corsOption = {
-    origin: URL,
-    // methods: ['POST', 'GET'],
-    credentials: true,
-    // optionSuccessStatus: 200
-}
+    origin: localURL,  // Allow requests only from this origin
+    methods: ['POST', 'GET', 'PUT', 'DELETE'],
+    credentials: true,  // Allow sending cookies/credentials
+    optionSuccessStatus: 200
+};
 
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.json()); // to support JSON-encoded bodies
 
 app.use("/api/", apiRoute);
 app.use("/api/", AuthMiddleware, apiProtected);
 
-// Connect the database 
-connectDB.then(() => {
-    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
-}).catch((err) => console.error(err));
+// Connect the database and start the server
+connectDB()
+    .then(() => {
+        app.on("error", (error) => {
+            console.log("ERROR: ", error);
+            throw error;
+        })
+        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    })
+    .catch((error) => {
+        console.error("Database connection failed", error);
+    });
