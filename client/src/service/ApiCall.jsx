@@ -2,7 +2,7 @@ import axios from "axios";
 
 const localURL = "http://localhost:3000/";
 const vercelURL = "https://todo-app-server-gilt.vercel.app/";
-const URL = localURL; // Change to localURL if testing locally
+const URL = vercelURL; // Change to localURL if testing locally
 
 const loginURL = `${URL}api/login`;
 const signUpURL = `${URL}api/signup`;

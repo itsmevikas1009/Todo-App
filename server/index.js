@@ -14,8 +14,10 @@ const PORT = 3000;
 const vercelURL = 'https://todo-app-murex-rho.vercel.app'
 const localURL = 'http://localhost:5173';  // Client running on port 5173
 
+const URL = vercelURL;
+
 const corsOption = {
-    origin: localURL,  // Allow requests only from this origin
+    origin: URL,  // Allow requests only from this origin
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,  // Allow sending cookies/credentials
     optionSuccessStatus: 200
