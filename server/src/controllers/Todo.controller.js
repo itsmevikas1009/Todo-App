@@ -1,7 +1,8 @@
 import { Todo } from "../models/todo.model.js"
 import { User } from "../models/user.model.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
-const createTodo = async (req, res) => {
+const createTodo = asyncHandler(async (req, res) => {
     const { todoTitle } = req.body;
     try {
         if (!todoTitle) {
@@ -23,6 +24,6 @@ const createTodo = async (req, res) => {
         return res.json({ status: 403, message: "Something went wrong!!" });
 
     }
-}
+});
 
 export default createTodo;

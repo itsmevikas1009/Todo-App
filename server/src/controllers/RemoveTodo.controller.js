@@ -1,7 +1,8 @@
 import { Todo } from "../models/todo.model.js"
 import { User } from "../models/user.model.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const RemoveTodo = async (req, res) => {
+export const RemoveTodo = asyncHandler(async (req, res) => {
     try {
         const result = await Todo.findOneAndDelete(({
             userId: req.userId,
@@ -18,4 +19,4 @@ export const RemoveTodo = async (req, res) => {
         return res.json({ status: 401, message: 'Could not Deleted!', list: null });
 
     }
-}
+});

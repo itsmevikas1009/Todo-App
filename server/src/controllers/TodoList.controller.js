@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js"
+import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const GetTodos = async (req, res) => {
+export const GetTodos = asyncHandler(async (req, res) => {
     try {
         const list = await User.findById({ _id: req.userId })
             .select("-password")
@@ -10,4 +11,4 @@ export const GetTodos = async (req, res) => {
     } catch (err) {
         return res.json({ status: 403, Error: err });
     }
-}
+});
