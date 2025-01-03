@@ -1,7 +1,8 @@
 import { User } from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
+import { asyncHandler } from '../utils/asyncHandler.js';
 
-const Login = async (req, res) => {
+const Login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -28,6 +29,6 @@ const Login = async (req, res) => {
         firstName: user.firstName,
         message: "Logged in successfully.",
     })
-}
+});
 
 export default Login;
